@@ -17,5 +17,10 @@ app.use("/api/auth", authRoutes);
 app.get("/", (req, res) => {
   res.send("Hello, Express!");
 });
+const meRoutes = require("./routes/me.routes");
+app.use("/api", meRoutes);
+
+const projectsRoutes = require("./routes/projects.routes");
+app.use("/api", projectsRoutes);
 
 module.exports = app;
